@@ -1,0 +1,129 @@
+flutter_launcher_icons:
+
+  #! ==========================================================
+  #! ACTIVE CONFIGURATION
+  #! ==========================================================
+
+  #* Android launcher icon source
+  image_path_android: "assets/images/splash12+.png"
+
+  #* iOS launcher icon source
+  image_path_ios: "assets/images/splash12+.png"
+
+  #* Generate Android icons
+  android: true
+
+  #* Generate iOS icons
+  ios: true
+
+  #* Minimum Android SDK
+  min_sdk_android: 21
+
+  #! ==========================================================
+  #! ADAPTIVE ICONS (ANDROID 8+)
+  #! ==========================================================
+
+  #* Background layer
+  #adaptive_icon_background: "assets/images/christmas-background.png"
+
+  #* Foreground layer
+  #adaptive_icon_foreground: "assets/images/icon-foreground-432x432.png"
+
+  #* Safe padding
+  #adaptive_icon_foreground_inset: 16
+
+  #* Android 13 themed icon
+  #adaptive_icon_monochrome: "assets/images/icon-monochrome-432x432.png"
+
+  #! ==========================================================
+  #! IOS
+  #! ==========================================================
+
+  #* Remove transparency for App Store compliance
+  remove_alpha_ios: true
+
+  #* Fill color when transparency is removed
+  background_color_ios: "#ffffff"
+
+  #? ==========================================================
+  #? COMMON OPTIONS
+  #? Uncomment when needed
+  #? ==========================================================
+
+  # image_path: "assets/images/icon-1024x1024.png"
+
+  #? ==========================================================
+  #? WEB SUPPORT
+  #? Uncomment this entire block when enabling Web
+  #? ==========================================================
+
+  # web:
+  #   generate: true
+  #   image_path: "assets/images/icon-1024x1024.png"
+  #   background_color: "#ffffff"
+  #   theme_color: "#2196F3"
+
+  #? ==========================================================
+  #? WINDOWS SUPPORT
+  #? Uncomment this entire block when enabling Windows
+  #? ==========================================================
+
+  # windows:
+  #   generate: true
+  #   image_path: "assets/images/icon-1024x1024.png"
+  #   icon_size: 256
+
+  #? ==========================================================
+  #? MACOS SUPPORT
+  #? Uncomment this entire block when enabling macOS
+  #? ==========================================================
+
+  # macos:
+  #   generate: true
+  #   image_path: "assets/images/icon-1024x1024.png"
+
+  #! ==========================================================
+  #! TERMINAL COMMANDS
+  #! ==========================================================
+
+  #> Install package
+  # flutter pub add flutter_launcher_icons
+
+  #> Get dependencies
+  # flutter pub get
+
+  #> Generate launcher icons (recommended)
+  # dart run flutter_launcher_icons
+
+  #> Alternative command (older versions)
+  # flutter pub run flutter_launcher_icons
+
+  #> Clean and regenerate if icons don't update
+  # flutter clean
+  # flutter pub get
+  # dart run flutter_launcher_icons
+
+  #> Rebuild application
+  # flutter run
+
+  #> Android release build
+  # flutter build apk --release
+
+  #> App Bundle for Play Store
+  # flutter build appbundle --release
+
+  #> iOS release build
+  # flutter build ios --release
+
+  #* ==========================================================
+  #* RECOMMENDED IMAGE SIZES
+  #* ==========================================================
+  #*
+  #* Main icon .............. 1024x1024
+  #* Android foreground ..... 432x432
+  #* Android monochrome ..... 432x432
+  #* Android background ..... 432x432
+  #* iOS icon ............... 1024x1024
+  #* Web icon ............... 1024x1024
+  #* Windows icon ........... 1024x1024
+  #* macOS icon ............. 1024x1024
