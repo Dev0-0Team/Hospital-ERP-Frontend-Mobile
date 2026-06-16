@@ -1,11 +1,12 @@
 import 'package:doctorine/core/theme/app_colors.dart';
 import 'package:doctorine/core/theme/app_styles.dart';
+import 'package:doctorine/core/theme/extensions/onboarding_gradient_theme_extension.dart';
 import 'package:flutter/material.dart';
 
 class AppLightThemes {
   AppLightThemes._();
 
-  static final ThemeData theme = ThemeData(
+  static ThemeData get theme => ThemeData(
     primaryColor: AppColors.mainBlue,
     scaffoldBackgroundColor: AppColors.white,
     brightness: Brightness.light,
@@ -16,7 +17,18 @@ class AppLightThemes {
     inputDecorationTheme: _inputDecorationTheme,
     textTheme: _textTheme,
     colorScheme: _colorScheme,
+    extensions: [
+      OnboardingGradientThemeExtension(gradient: onboardingGradient),
+    ],
   );
+// ── Onboarding Gradient ─────────────────────────────────────────────────
+  static final LinearGradient onboardingGradient = LinearGradient(
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+    colors: [AppColors.white, AppColors.white.withAlpha(0)],
+    stops: const [0.16, 0.34],
+  );
+
   // ── Color Scheme ─────────────────────────────────────────────────────────
   static const ColorScheme _colorScheme = ColorScheme.light(
     primary: AppColors.mainBlue,

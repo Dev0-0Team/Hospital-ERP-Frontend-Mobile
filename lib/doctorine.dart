@@ -11,7 +11,7 @@ class Doctorine extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-      theme: true ? AppLightThemes.theme : AppDarkTheme.dark,
+      theme: !true ? AppLightThemes.theme : AppDarkTheme.dark,
     );
   }
 }

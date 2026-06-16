@@ -14,12 +14,7 @@ class DoctorImageWithTitle extends StatelessWidget {
         SvgPicture.asset(AppAssets.assetsImagesSvgsLogoBackground),
         Container(
           foregroundDecoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              colors: [AppColors.white, AppColors.white.withAlpha(0)],
-              stops: const [0.16, 0.34],
-            ),
+            gradient: context.onboardingGradient,
           ),
           child: Image.asset(
             //width: double.infinity,
