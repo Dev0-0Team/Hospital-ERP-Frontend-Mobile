@@ -1,5 +1,5 @@
-
 import 'package:doctorine/core/constants/app_assets.dart';
+import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -13,7 +13,13 @@ class AppLogoAndName extends StatelessWidget {
       spacing: 20,
       children: [
         SvgPicture.asset(AppAssets.assetsImagesSvgsAppLogo),
-        SvgPicture.asset(AppAssets.assetsImagesSvgsDocdoc),
+        SvgPicture.asset(
+          AppAssets.assetsImagesSvgsDocdoc,
+          colorFilter: ColorFilter.mode(
+            context.colorScheme.tertiary,
+            BlendMode.srcIn,
+          ),
+        ),
       ],
     );
   }

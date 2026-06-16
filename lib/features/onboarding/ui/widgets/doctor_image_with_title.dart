@@ -1,6 +1,5 @@
 import 'package:doctorine/core/constants/app_assets.dart';
 import 'package:doctorine/core/extensions/build_context_extensions.dart';
-import 'package:doctorine/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

@@ -34,7 +34,7 @@ class AppLightThemes {
     primary: AppColors.mainBlue,
     secondary: AppColors.grey,
     surface: AppColors.moreLightGrey,
-    tertiary: AppColors.white,
+    tertiary: AppColors.blackColor,
   );
 
   // ── Elevated Button ────────────────────────────────────────────────────────
