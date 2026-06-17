@@ -1,5 +1,6 @@
 import 'package:doctorine/core/router/app_routes.dart';
-import 'package:doctorine/features/login/ui/login_view.dart';
+import 'package:doctorine/features/auth/views/login_view.dart';
+import 'package:doctorine/features/auth/views/sign_up_view.dart';
 import 'package:doctorine/features/onboarding/ui/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +17,10 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.login,
         builder: (context, state) => const LoginView(),
+      ),
+      GoRoute(
+        path: AppRoutes.signUp,
+        builder: (context, state) => const SignUpView(),
       ),
       GoRoute(
         path: AppRoutes.home,

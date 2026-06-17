@@ -1,13 +1,15 @@
 import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:doctorine/core/helpers/spaces.dart';
+import 'package:doctorine/core/router/app_routes.dart';
 import 'package:doctorine/core/widgets/primary_button.dart';
 import 'package:doctorine/core/widgets/primary_text_field.dart';
-import 'package:doctorine/features/login/ui/widgets/oauth_widgets.dart';
-import 'package:doctorine/features/login/ui/widgets/remember_me_check_box.dart';
-import 'package:doctorine/features/login/ui/widgets/sign_in_with_message.dart';
-import 'package:doctorine/features/login/ui/widgets/sign_up_text.dart';
-import 'package:doctorine/features/login/ui/widgets/terms_and_conditions_text.dart';
+import 'package:doctorine/features/auth/views/widgets/oauth_widgets.dart';
+import 'package:doctorine/features/auth/views/widgets/remember_me_check_box.dart';
+import 'package:doctorine/features/auth/views/widgets/sign_in_with_message.dart';
+import 'package:doctorine/features/auth/views/widgets/bottom_text.dart';
+import 'package:doctorine/features/auth/views/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -44,7 +46,11 @@ class LoginView extends StatelessWidget {
                 const VerticalSpace(height: 32),
                 const TermsAndConditionsText(),
                 const VerticalSpace(height: 24),
-                const SignUpText(),
+                BottomText(
+                  messageText: "D’ont have an account yet? ",
+                  clickableText: "  Sign Up.",
+                  onTextClicked: () => context.pushNamed(AppRoutes.signUp),
+                ),
                 const VerticalSpace(height: 24),
               ],
             ),
