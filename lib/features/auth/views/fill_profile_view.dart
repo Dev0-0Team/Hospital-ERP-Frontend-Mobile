@@ -3,7 +3,7 @@ import 'package:doctorine/core/helpers/spaces.dart';
 import 'package:doctorine/core/widgets/custom_phone_text_field.dart';
 import 'package:doctorine/core/widgets/primary_button.dart';
 import 'package:doctorine/core/widgets/primary_text_field.dart';
-import 'package:doctorine/features/auth/views/widgets/picture_picker.dart';
+import 'package:doctorine/core/widgets/picture_picker.dart';
 import 'package:flutter/material.dart';
 
 class FillProfileView extends StatelessWidget {

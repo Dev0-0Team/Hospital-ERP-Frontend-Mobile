@@ -1,5 +1,4 @@
 import 'package:doctorine/core/constants/app_assets.dart';
-import 'package:doctorine/core/helpers/spaces.dart';
 import 'package:doctorine/core/theme/app_colors.dart';
 import 'package:doctorine/features/root/logic/root_cubit.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class RootScreenNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 90,
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
@@ -25,6 +24,10 @@ class RootScreenNavBar extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 12),
               decoration: BoxDecoration(
                 color: AppColors.white,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.08),
@@ -37,7 +40,7 @@ class RootScreenNavBar extends StatelessWidget {
             ),
           ),
 
-          Positioned(top: -60, child: _buildSearchIcon(context)),
+          Positioned(top: -20, child: _buildSearchIcon(context)),
         ],
       ),
     );
@@ -114,7 +117,6 @@ class RootScreenNavBar extends StatelessWidget {
     required int index,
     required int activeIndex,
     required FaIconData icon,
-    bool hasBadge = false,
   }) {
     final isSelected = index == activeIndex;
 

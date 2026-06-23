@@ -1,5 +1,3 @@
-import 'package:doctorine/core/constants/app_assets.dart';
-import 'package:doctorine/core/theme/app_colors.dart';
 import 'package:doctorine/features/calendar/views/calendar_view.dart';
 import 'package:doctorine/features/home/home_view.dart';
 import 'package:doctorine/features/messages/views/messages_view.dart';

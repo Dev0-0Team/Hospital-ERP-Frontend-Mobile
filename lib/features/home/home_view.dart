@@ -11,38 +11,36 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            const SliverToBoxAdapter(child: HomeViewAppBar()),
-            const SliverToBoxAdapter(child: DoctorsBlueContainer()),
-            const SliverToBoxAdapter(child: VerticalSpace(height: 24)),
-            SliverToBoxAdapter(
-              child: TextTitleWithTextButton(
-                titleText: "Doctor Specialty",
-                buttonText: "See All",
-                onPressed: () {},
-              ),
+    return SafeArea(
+      child: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(child: HomeViewAppBar()),
+          const SliverToBoxAdapter(child: DoctorsBlueContainer()),
+          const SliverToBoxAdapter(child: VerticalSpace(height: 24)),
+          SliverToBoxAdapter(
+            child: TextTitleWithTextButton(
+              titleText: "Doctor Specialty",
+              buttonText: "See All",
+              onPressed: () {},
             ),
-            const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
-            const SliverToBoxAdapter(child: DoctorSpecialtyList()),
-            const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
-            SliverToBoxAdapter(
-              child: TextTitleWithTextButton(
-                titleText: "Recommendation Doctor",
-                buttonText: "See All",
-                onPressed: () {},
-              ),
+          ),
+          const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
+          const SliverToBoxAdapter(child: DoctorSpecialtyList()),
+          const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
+          SliverToBoxAdapter(
+            child: TextTitleWithTextButton(
+              titleText: "Recommendation Doctor",
+              buttonText: "See All",
+              onPressed: () {},
             ),
-            const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
-            const SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0),
-              sliver: RecommendationList(),
-            ),
-            const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
-          ],
-        ),
+          ),
+          const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
+          const SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            sliver: RecommendationList(),
+          ),
+          const SliverToBoxAdapter(child: VerticalSpace(height: 16)),
+        ],
       ),
     );
   }
