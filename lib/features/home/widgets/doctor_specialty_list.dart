@@ -11,7 +11,7 @@ class DoctorSpecialtyList extends StatelessWidget {
       height: 100,
       child: ListView.separated(
         shrinkWrap: true,
-        scrollDirection: .horizontal,
+        scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Padding(
           padding: index == 0
               ? const EdgeInsets.only(left: 18.0)

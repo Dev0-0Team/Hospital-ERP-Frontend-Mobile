@@ -10,78 +10,101 @@ class ProfileView extends StatelessWidget {
     return SafeArea(
       child: ColoredBox(
         color: context.colorScheme.primary,
-        child: Column(
-          children: [
-            // ── Blue header with avatar overlapping white card ──
-            SizedBox(
-              height: 250,
-              child: Stack(
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: constraints.maxHeight,
+                ),
+                child: IntrinsicHeight(
+                  child: Column(
                     children: [
-                      const ProfileViewAppBar(),
-                      PicturePicker(onPressed: () {}),
-                    ],
-                  ),
-                  // White card peeking from bottom
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Container(
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(24),
+                      // ── Blue header with avatar overlapping white card ──
+                      SizedBox(
+                        height: 250,
+                        child: Stack(
+                          children: [
+                            // White card peeking from bottom (drawn first/underneath)
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              child: Container(
+                                height: 80,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(24),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            // App Bar
+                            const Positioned(
+                              top: 12,
+                              left: 0,
+                              right: 0,
+                              child: ProfileViewAppBar(),
+                            ),
+
+                            // Profile Picture Picker centered on the blue-white boundary
+                            Positioned(
+                              bottom: 5,
+                              left: 0,
+                              right: 0,
+                              child: PicturePicker(onPressed: () {}),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
 
-            // ── White scrollable area ───────────────────────────
-            Expanded(
-              child: ColoredBox(
-                color: Colors.white,
-                child: ListView(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  children: const [
-                    ProfileViewUserInfo(),
-                    SizedBox(height: 24),
-                    _ProfileTile(
-                      icon: Icons.person_outline,
-                      label: 'Full Name',
-                      value: 'Omar Ahmed',
-                    ),
-                    _ProfileTile(
-                      icon: Icons.email_outlined,
-                      label: 'Email',
-                      value: 'omarahmed14@gmail.com',
-                    ),
-                    _ProfileTile(
-                      icon: Icons.phone_outlined,
-                      label: 'Phone',
-                      value: '+20 101 234 5678',
-                    ),
-                    _ProfileTile(
-                      icon: Icons.cake_outlined,
-                      label: 'Date of Birth',
-                      value: 'Jan 1, 1995',
-                    ),
-                    _ProfileTile(
-                      icon: Icons.location_on_outlined,
-                      label: 'Location',
-                      value: 'Cairo, Egypt',
-                    ),
-                  ],
+                      // ── White scrollable area ───────────────────────────
+                      Expanded(
+                        child: Container(
+                          color: Colors.white,
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: const Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              ProfileViewUserInfo(),
+                              SizedBox(height: 24),
+                              _ProfileTile(
+                                icon: Icons.person_outline,
+                                label: 'Full Name',
+                                value: 'Omar Ahmed',
+                              ),
+                              _ProfileTile(
+                                icon: Icons.email_outlined,
+                                label: 'Email',
+                                value: 'omarahmed14@gmail.com',
+                              ),
+                              _ProfileTile(
+                                icon: Icons.phone_outlined,
+                                label: 'Phone',
+                                value: '+20 101 234 5678',
+                              ),
+                              _ProfileTile(
+                                icon: Icons.cake_outlined,
+                                label: 'Date of Birth',
+                                value: 'Jan 1, 1995',
+                              ),
+                              _ProfileTile(
+                                icon: Icons.location_on_outlined,
+                                label: 'Location',
+                                value: 'Cairo, Egypt',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
@@ -177,6 +200,18 @@ class ProfileViewAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () {},
+            child: const Padding(
+              padding: EdgeInsets.all(4),
+              child: Icon(
+                Icons.arrow_back_ios_new_rounded,
+                color: Colors.white,
+                size: 24,
+              ),
+            ),
+          ),
           Text(
             'Profile',
             style: context.textStyles.titleMedium?.copyWith(

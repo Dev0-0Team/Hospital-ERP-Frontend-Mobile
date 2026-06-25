@@ -9,5 +9,5 @@ extension BuildContextExtensions on BuildContext {
   LinearGradient get onboardingGradient =>
       Theme.of(this).extension<OnboardingGradientThemeExtension>()!.gradient;
 
-  InputDecorationThemeData get inputFieldTheme => Theme.of(this).inputDecorationTheme;
+  InputDecorationTheme get inputFieldTheme => Theme.of(this).inputDecorationTheme;
 }

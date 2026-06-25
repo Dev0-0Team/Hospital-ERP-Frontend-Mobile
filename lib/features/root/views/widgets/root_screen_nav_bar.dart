@@ -116,7 +116,7 @@ class RootScreenNavBar extends StatelessWidget {
     BuildContext context, {
     required int index,
     required int activeIndex,
-    required FaIconData icon,
+    required IconData icon,
   }) {
     final isSelected = index == activeIndex;
 
