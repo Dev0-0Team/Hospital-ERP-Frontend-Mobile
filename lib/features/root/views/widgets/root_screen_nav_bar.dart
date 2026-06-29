@@ -67,7 +67,7 @@ class RootScreenNavBar extends StatelessWidget {
         ),
 
         // Search slot
-        const Expanded(child: SizedBox()),
+        const Spacer(),
 
         Expanded(
           child: _buildNavItem(
@@ -116,7 +116,7 @@ class RootScreenNavBar extends StatelessWidget {
     BuildContext context, {
     required int index,
     required int activeIndex,
-    required IconData icon,
+    required FaIconData icon,
   }) {
     final isSelected = index == activeIndex;
 

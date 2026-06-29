@@ -9,15 +9,13 @@ class DoctorSpecialtyItem extends StatelessWidget {
     return Column(
       spacing: 12,
       children: [
-        SizedBox(
-          child: CircleAvatar(
-            radius: 28,
-            backgroundColor: context.colorScheme.surface,
-            child: Icon(
-              Icons.medical_services,
-              size: 24,
-              color: Colors.red.shade400,
-            ),
+        CircleAvatar(
+          radius: 28,
+          backgroundColor: context.colorScheme.surface,
+          child: Icon(
+            Icons.medical_services,
+            size: 24,
+            color: Colors.red.shade400,
           ),
         ),
         Text(

@@ -4,26 +4,29 @@ import 'package:doctorine/core/theme/extensions/onboarding_gradient_theme_extens
 import 'package:flutter/material.dart';
 
 class AppDarkTheme {
-  static final ThemeData dark = ThemeData(
-    primaryColor: AppColors.mainBlue,
-    scaffoldBackgroundColor: AppColors.blackColor,
-    brightness: Brightness.dark,
-    elevatedButtonTheme: _elevatedButtonThemeDark,
-    iconTheme: _iconThemeDark,
-    iconButtonTheme: _iconButtonThemeDark,
-    checkboxTheme: _checkboxThemeDark,
-    inputDecorationTheme: _inputDecorationThemeDark,
-    textTheme: _textThemeDark,
-    colorScheme: _colorScheme,
-    extensions: [
-      OnboardingGradientThemeExtension(gradient: onboardingGradient),
-    ],
-  );
+  AppDarkTheme._();
+
+  static ThemeData get dark => ThemeData(
+        primaryColor: AppColors.mainBlue,
+        scaffoldBackgroundColor: const Color(0xFF121212),
+        brightness: Brightness.dark,
+        elevatedButtonTheme: _elevatedButtonThemeDark,
+        iconTheme: _iconThemeDark,
+        iconButtonTheme: _iconButtonThemeDark,
+        checkboxTheme: _checkboxThemeDark,
+        inputDecorationTheme: _inputDecorationThemeDark,
+        textTheme: _textThemeDark,
+        colorScheme: _colorScheme,
+        extensions: [
+          OnboardingGradientThemeExtension(gradient: onboardingGradient),
+        ],
+      );
+
   // ── Onboarding Gradient ─────────────────────────────────────────────────
   static final LinearGradient onboardingGradient = LinearGradient(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
-    colors: [AppColors.blackColor, AppColors.blackColor.withAlpha(0)],
+    colors: [const Color(0xFF121212), const Color(0xFF121212).withAlpha(0)],
     stops: const [0.16, 0.34],
   );
 
@@ -31,12 +34,14 @@ class AppDarkTheme {
   static const ColorScheme _colorScheme = ColorScheme.dark(
     primary: AppColors.mainBlue,
     secondary: Color(0xFF8A8FA8),
+    secondaryContainer: Color(0xFF2C3144),
     surface: Color(0xFF1C1F2A),
     tertiary: AppColors.white,
+    outline: Color(0xFF2C3144),
+    scrim: AppColors.notificationBadge,
   );
 
   // ── Elevated Button (Dark) ────────────────────────────────────────────────
-
   static final _elevatedButtonThemeDark = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: AppColors.mainBlue,
@@ -48,14 +53,12 @@ class AppDarkTheme {
   );
 
   // ── Icon (Dark) ───────────────────────────────────────────────────────────
-
   static const _iconThemeDark = IconThemeData(
     color: AppColors.mainBlue,
     size: 24,
   );
 
   // ── Icon Button (Dark) ────────────────────────────────────────────────────
-
   static final _iconButtonThemeDark = IconButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: const Color(0xFF1C1F2A),
@@ -65,14 +68,12 @@ class AppDarkTheme {
   );
 
   // ── Checkbox (Dark) ───────────────────────────────────────────────────────
-
   static final _checkboxThemeDark = CheckboxThemeData(
     side: const BorderSide(color: Color(0xFF3A3F52), width: 2),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
   );
 
   // ── Input Decoration (Dark) ───────────────────────────────────────────────
-
   static OutlineInputBorder _outlineBorderDark(Color color) =>
       OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
@@ -81,7 +82,7 @@ class AppDarkTheme {
 
   static final _inputDecorationThemeDark = InputDecorationTheme(
     hintStyle: AppStyles.textStyleMedium14.copyWith(
-      color: const Color(0xFF3A3F52),
+      color: const Color(0xFF8A8FA8),
     ),
     filled: true,
     fillColor: const Color(0xFF1C1F2A),
@@ -94,10 +95,9 @@ class AppDarkTheme {
   );
 
   // ── Text (Dark) ───────────────────────────────────────────────────────────
-
   static final _textThemeDark = TextTheme(
-    titleLarge: AppStyles.textStyleBold32.copyWith(color: Colors.white),
-    titleMedium: AppStyles.textStyleBold24.copyWith(color: Colors.white),
+    titleLarge: AppStyles.textStyleBold32.copyWith(color: AppColors.mainBlue),
+    titleMedium: AppStyles.textStyleBold24.copyWith(color: AppColors.mainBlue),
     labelSmall: AppStyles.textStyleSemiBold12.copyWith(
       color: const Color(0xFF8A8FA8),
     ),
@@ -106,6 +106,12 @@ class AppDarkTheme {
       color: const Color(0xFFCDD0DC),
     ),
     bodySmall: AppStyles.textStyleRegular12.copyWith(
+      color: const Color(0xFF8A8FA8),
+    ),
+    displayLarge: AppStyles.textStyleBold18.copyWith(color: Colors.white),
+    displayMedium: AppStyles.textStyleRegular18.copyWith(color: Colors.white),
+    headlineMedium: AppStyles.textStyleSemiBold18.copyWith(color: Colors.white),
+    headlineSmall: AppStyles.textStyleMedium12.copyWith(
       color: const Color(0xFF8A8FA8),
     ),
   );
