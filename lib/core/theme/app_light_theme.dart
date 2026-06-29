@@ -7,20 +7,22 @@ class AppLightThemes {
   AppLightThemes._();
 
   static ThemeData get theme => ThemeData(
-    primaryColor: AppColors.mainBlue,
-    scaffoldBackgroundColor: AppColors.white,
-    brightness: Brightness.light,
-    elevatedButtonTheme: _elevatedButtonTheme,
-    iconTheme: _iconTheme,
-    iconButtonTheme: _iconButtonTheme,
-    checkboxTheme: _checkboxTheme,
-    inputDecorationTheme: _inputDecorationTheme,
-    textTheme: _textTheme,
-    colorScheme: _colorScheme,
-    extensions: [
-      OnboardingGradientThemeExtension(gradient: onboardingGradient),
-    ],
-  );
+        useMaterial3: true,
+        primaryColor: AppColors.mainBlue,
+        scaffoldBackgroundColor: AppColors.white,
+        brightness: Brightness.light,
+        elevatedButtonTheme: _elevatedButtonTheme,
+        iconTheme: _iconTheme,
+        iconButtonTheme: _iconButtonTheme,
+        checkboxTheme: _checkboxTheme,
+        inputDecorationTheme: _inputDecorationTheme,
+        textTheme: _textTheme,
+        colorScheme: _colorScheme,
+        extensions: [
+          OnboardingGradientThemeExtension(gradient: onboardingGradient),
+        ],
+      );
+
   // ── Onboarding Gradient ─────────────────────────────────────────────────
   static final LinearGradient onboardingGradient = LinearGradient(
     begin: Alignment.bottomCenter,
@@ -32,11 +34,15 @@ class AppLightThemes {
   // ── Color Scheme ─────────────────────────────────────────────────────────
   static const ColorScheme _colorScheme = ColorScheme.light(
     primary: AppColors.mainBlue,
+    onPrimary: AppColors.white,
     secondary: AppColors.grey,
+    onSecondary: AppColors.white,
     secondaryContainer: AppColors.lightGrey,
     surface: AppColors.moreLightGrey,
+    onSurface: AppColors.blackColor,
+    onSurfaceVariant: AppColors.grey,
     tertiary: AppColors.blackColor,
-    outline: AppColors.white,
+    outline: AppColors.lightGrey,
     scrim: AppColors.notificationBadge,
   );
 
@@ -51,33 +57,33 @@ class AppLightThemes {
     ),
   );
 
-  // ── Icon ──────────────────────────────────────────────────────────────────
+  // ── Icon Theme ──────────────────────────────────────────────────────────────────
+  static const _iconTheme = IconThemeData(
+    color: AppColors.blackColor,
+    size: 24,
+  );
 
-  static const _iconTheme = IconThemeData(color: AppColors.mainBlue, size: 24);
-
-  // ── Icon Button ──────────────────────────────────────────────────────────────────
-
+  // ── Icon Button Theme ──────────────────────────────────────────────────────────────────
   static final _iconButtonTheme = IconButtonThemeData(
-    style: ElevatedButton.styleFrom(
+    style: IconButton.styleFrom(
       backgroundColor: AppColors.moreLightGrey,
+      foregroundColor: AppColors.blackColor,
       fixedSize: const Size(48, 48),
       shape: const CircleBorder(),
     ),
   );
 
   // ── Checkbox ──────────────────────────────────────────────────────────────
-
   static final _checkboxTheme = CheckboxThemeData(
     side: const BorderSide(color: AppColors.lightGrey, width: 2),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
   );
 
   // ── Input Decoration ──────────────────────────────────────────────────────
-
   static OutlineInputBorder _outlineBorder(Color color) => OutlineInputBorder(
-    borderRadius: BorderRadius.circular(16),
-    borderSide: BorderSide(color: color, width: 1.2),
-  );
+        borderRadius: BorderRadius.circular(16),
+        borderSide: BorderSide(color: color, width: 1.2),
+      );
 
   static final _inputDecorationTheme = InputDecorationTheme(
     hintStyle: AppStyles.textStyleMedium14.copyWith(color: AppColors.lightGrey),
@@ -89,18 +95,20 @@ class AppLightThemes {
     focusedErrorBorder: _outlineBorder(Colors.red),
   );
 
-  // ── Text ──────────────────────────────────────────────────────────────────
-
-  static const _textTheme = TextTheme(
-    titleLarge: AppStyles.textStyleBold32,
-    titleMedium: AppStyles.textStyleBold24,
-    labelSmall: AppStyles.textStyleSemiBold12,
-    labelMedium: AppStyles.textStyleSemiBold16,
-    bodyMedium: AppStyles.textStyleRegular14,
-    bodySmall: AppStyles.textStyleRegular12,
-    displayLarge: AppStyles.textStyleBold18,
-    displayMedium: AppStyles.textStyleRegular18,
-    headlineMedium: AppStyles.textStyleSemiBold18,
-    headlineSmall: AppStyles.textStyleMedium12,
+  // ── Text Theme ─────────────────────────────────────────────────────────────
+  static final _textTheme = TextTheme(
+    titleLarge: AppStyles.textStyleBold32.copyWith(color: AppColors.mainBlue),
+    titleMedium: AppStyles.textStyleBold24.copyWith(color: AppColors.mainBlue),
+    titleSmall: AppStyles.textStyleBold18.copyWith(color: AppColors.blackColor),
+    displayLarge: AppStyles.textStyleBold18.copyWith(color: AppColors.blackColor),
+    displayMedium: AppStyles.textStyleRegular18.copyWith(color: AppColors.blackColor),
+    headlineMedium: AppStyles.textStyleSemiBold18.copyWith(color: AppColors.blackColor),
+    headlineSmall: AppStyles.textStyleMedium12.copyWith(color: AppColors.grey),
+    labelLarge: AppStyles.textStyleSemiBold16.copyWith(color: AppColors.blackColor),
+    labelMedium: AppStyles.textStyleSemiBold16.copyWith(color: AppColors.blackColor),
+    labelSmall: AppStyles.textStyleSemiBold12.copyWith(color: AppColors.grey),
+    bodyLarge: AppStyles.textStyleBold16.copyWith(color: AppColors.blackColor),
+    bodyMedium: AppStyles.textStyleRegular14.copyWith(color: AppColors.grey),
+    bodySmall: AppStyles.textStyleRegular12.copyWith(color: AppColors.grey),
   );
 }

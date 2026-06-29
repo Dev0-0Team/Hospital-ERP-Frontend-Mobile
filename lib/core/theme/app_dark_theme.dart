@@ -7,8 +7,9 @@ class AppDarkTheme {
   AppDarkTheme._();
 
   static ThemeData get dark => ThemeData(
+        useMaterial3: true,
         primaryColor: AppColors.mainBlue,
-        scaffoldBackgroundColor: const Color(0xFF121212),
+        scaffoldBackgroundColor: const Color(0xFF12141C),
         brightness: Brightness.dark,
         elevatedButtonTheme: _elevatedButtonThemeDark,
         iconTheme: _iconThemeDark,
@@ -26,16 +27,20 @@ class AppDarkTheme {
   static final LinearGradient onboardingGradient = LinearGradient(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
-    colors: [const Color(0xFF121212), const Color(0xFF121212).withAlpha(0)],
+    colors: [const Color(0xFF12141C), const Color(0xFF12141C).withAlpha(0)],
     stops: const [0.16, 0.34],
   );
 
   // ── Color Scheme ─────────────────────────────────────────────────────────
   static const ColorScheme _colorScheme = ColorScheme.dark(
     primary: AppColors.mainBlue,
-    secondary: Color(0xFF8A8FA8),
+    onPrimary: AppColors.white,
+    secondary: Color(0xFF9E9E9E),
+    onSecondary: AppColors.white,
     secondaryContainer: Color(0xFF2C3144),
-    surface: Color(0xFF1C1F2A),
+    surface: Color(0xFF1E202B),
+    onSurface: AppColors.white,
+    onSurfaceVariant: Color(0xFF8A8FA8),
     tertiary: AppColors.white,
     outline: Color(0xFF2C3144),
     scrim: AppColors.notificationBadge,
@@ -54,14 +59,15 @@ class AppDarkTheme {
 
   // ── Icon (Dark) ───────────────────────────────────────────────────────────
   static const _iconThemeDark = IconThemeData(
-    color: AppColors.mainBlue,
+    color: AppColors.white,
     size: 24,
   );
 
   // ── Icon Button (Dark) ────────────────────────────────────────────────────
   static final _iconButtonThemeDark = IconButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: const Color(0xFF1C1F2A),
+    style: IconButton.styleFrom(
+      backgroundColor: const Color(0xFF1E202B),
+      foregroundColor: AppColors.white,
       fixedSize: const Size(48, 48),
       shape: const CircleBorder(),
     ),
@@ -85,7 +91,7 @@ class AppDarkTheme {
       color: const Color(0xFF8A8FA8),
     ),
     filled: true,
-    fillColor: const Color(0xFF1C1F2A),
+    fillColor: const Color(0xFF1E202B),
     isDense: true,
     contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
     enabledBorder: _outlineBorderDark(const Color(0xFF2C3144)),
@@ -98,20 +104,23 @@ class AppDarkTheme {
   static final _textThemeDark = TextTheme(
     titleLarge: AppStyles.textStyleBold32.copyWith(color: AppColors.mainBlue),
     titleMedium: AppStyles.textStyleBold24.copyWith(color: AppColors.mainBlue),
-    labelSmall: AppStyles.textStyleSemiBold12.copyWith(
-      color: const Color(0xFF8A8FA8),
-    ),
-    labelMedium: AppStyles.textStyleSemiBold16.copyWith(color: Colors.white),
-    bodyMedium: AppStyles.textStyleRegular14.copyWith(
-      color: const Color(0xFFCDD0DC),
-    ),
-    bodySmall: AppStyles.textStyleRegular12.copyWith(
-      color: const Color(0xFF8A8FA8),
-    ),
+    titleSmall: AppStyles.textStyleBold18.copyWith(color: Colors.white),
     displayLarge: AppStyles.textStyleBold18.copyWith(color: Colors.white),
     displayMedium: AppStyles.textStyleRegular18.copyWith(color: Colors.white),
     headlineMedium: AppStyles.textStyleSemiBold18.copyWith(color: Colors.white),
     headlineSmall: AppStyles.textStyleMedium12.copyWith(
+      color: const Color(0xFF8A8FA8),
+    ),
+    labelLarge: AppStyles.textStyleSemiBold16.copyWith(color: Colors.white),
+    labelMedium: AppStyles.textStyleSemiBold16.copyWith(color: Colors.white),
+    labelSmall: AppStyles.textStyleSemiBold12.copyWith(
+      color: const Color(0xFF8A8FA8),
+    ),
+    bodyLarge: AppStyles.textStyleBold16.copyWith(color: Colors.white),
+    bodyMedium: AppStyles.textStyleRegular14.copyWith(
+      color: const Color(0xFFCDD0DC),
+    ),
+    bodySmall: AppStyles.textStyleRegular12.copyWith(
       color: const Color(0xFF8A8FA8),
     ),
   );

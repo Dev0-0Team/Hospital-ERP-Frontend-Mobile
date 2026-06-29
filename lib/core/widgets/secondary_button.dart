@@ -5,6 +5,7 @@ class SecondaryButton extends StatelessWidget {
   const SecondaryButton({super.key, this.onPressed, required this.text});
   final void Function()? onPressed;
   final String text;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -14,15 +15,16 @@ class SecondaryButton extends StatelessWidget {
         width: 130,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: context.colorScheme.surface,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(25),
-          border: Border.all(color: Colors.white),
+          border: Border.all(color: context.colorScheme.outline),
         ),
         child: Text(
-          'Find Nearby',
+          text,
           style: context.textStyles.bodySmall?.copyWith(
             color: context.colorScheme.primary,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),

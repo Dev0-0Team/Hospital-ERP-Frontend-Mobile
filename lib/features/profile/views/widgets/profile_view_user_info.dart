@@ -19,7 +19,9 @@ class ProfileViewUserInfo extends StatelessWidget {
         Text(
           'omarahmed14@gmail.com',
           textAlign: TextAlign.center,
-          style: context.textStyles.bodyMedium,
+          style: context.textStyles.bodyMedium?.copyWith(
+            color: context.colorScheme.onSurfaceVariant,
+          ),
         ),
       ],
     );

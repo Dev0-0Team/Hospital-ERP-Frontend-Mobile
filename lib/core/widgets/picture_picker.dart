@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class PicturePicker extends StatelessWidget {
   const PicturePicker({super.key, required this.onPressed});
   final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -19,26 +20,36 @@ class PicturePicker extends StatelessWidget {
     );
   }
 
-  IconButton _buildEditButton(BuildContext context) {
-    return IconButton.filled(
-      splashRadius: 25,
-      onPressed: onPressed,
-      style: IconButton.styleFrom(
-        backgroundColor: context.colorScheme.surface,
-        fixedSize: const Size.fromHeight(30),
-        shape: CircleBorder(
-          side: BorderSide(color: context.colorScheme.outline, width: 2),
-        ),
+  Widget _buildEditButton(BuildContext context) {
+    return Container(
+      width: 36,
+      height: 36,
+      decoration: BoxDecoration(
+        color: context.colorScheme.surface,
+        shape: BoxShape.circle,
+        border: Border.all(color: context.colorScheme.outline, width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 6,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
-      icon: FaIcon(
-        FontAwesomeIcons.pen,
-        size: 16,
-        color: context.colorScheme.primary,
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        splashRadius: 20,
+        onPressed: onPressed,
+        icon: FaIcon(
+          FontAwesomeIcons.pen,
+          size: 14,
+          color: context.colorScheme.primary,
+        ),
       ),
     );
   }
 
-  Image _buildAssetsImage() {
+  Widget _buildAssetsImage() {
     return Image.asset(
       AppAssets.assetsImagesPlaceHolder,
       fit: BoxFit.fill,

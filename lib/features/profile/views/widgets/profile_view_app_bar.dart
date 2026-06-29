@@ -1,4 +1,3 @@
-
 import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:doctorine/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +15,12 @@ class ProfileViewAppBar extends StatelessWidget {
         children: [
           InkWell(
             borderRadius: BorderRadius.circular(20),
-            onTap: () {},
-            child: const Padding(
-              padding: EdgeInsets.all(4),
+            onTap: () => context.pop(),
+            child: Padding(
+              padding: const EdgeInsets.all(4),
               child: Icon(
                 Icons.arrow_back_ios_new_rounded,
-                color: Colors.white,
+                color: context.colorScheme.onPrimary,
                 size: 24,
               ),
             ),
@@ -29,18 +28,18 @@ class ProfileViewAppBar extends StatelessWidget {
           Text(
             'Profile',
             style: context.textStyles.titleMedium?.copyWith(
-              color: Colors.white,
+              color: context.colorScheme.onPrimary,
               fontWeight: FontWeight.w700,
             ),
           ),
           InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: () => context.push(AppRoutes.settings),
-            child:  Padding(
+            child: Padding(
               padding: const EdgeInsets.all(4),
               child: Icon(
                 Icons.settings_outlined,
-                color: context.colorScheme.surface,
+                color: context.colorScheme.onPrimary,
                 size: 24,
               ),
             ),

@@ -1,3 +1,4 @@
+import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class MessagesView extends StatelessWidget {
@@ -5,11 +6,11 @@ class MessagesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Text(
           "Messages Screen",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+          style: context.textStyles.displayLarge,
         ),
       ),
     );

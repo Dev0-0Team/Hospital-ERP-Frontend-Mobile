@@ -8,8 +8,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class RootScreenNavBar extends StatelessWidget {
   const RootScreenNavBar({super.key, required this.activeIndex});
   final int activeIndex;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return SizedBox(
       height: 90,
       child: Stack(
@@ -23,14 +25,16 @@ class RootScreenNavBar extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 12),
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: theme.colorScheme.surface,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.08),
+                    color: theme.brightness == Brightness.dark
+                        ? Colors.black.withValues(alpha: 0.4)
+                        : Colors.black.withValues(alpha: 0.08),
                     blurRadius: 15,
                     offset: const Offset(0, -2),
                   ),
@@ -39,7 +43,6 @@ class RootScreenNavBar extends StatelessWidget {
               child: _buildRowIcons(context),
             ),
           ),
-
           Positioned(top: -20, child: _buildSearchIcon(context)),
         ],
       ),
@@ -65,10 +68,7 @@ class RootScreenNavBar extends StatelessWidget {
             icon: FontAwesomeIcons.message,
           ),
         ),
-
-        // Search slot
         const Spacer(),
-
         Expanded(
           child: _buildNavItem(
             context,
@@ -119,6 +119,7 @@ class RootScreenNavBar extends StatelessWidget {
     required FaIconData icon,
   }) {
     final isSelected = index == activeIndex;
+    final theme = Theme.of(context);
 
     return GestureDetector(
       onTap: () => context.read<RootCubit>().changeTab(index),
@@ -126,7 +127,7 @@ class RootScreenNavBar extends StatelessWidget {
         child: FaIcon(
           icon,
           size: 22,
-          color: isSelected ? AppColors.mainBlue : const Color(0xFF757575),
+          color: isSelected ? AppColors.mainBlue : theme.colorScheme.secondary,
         ),
       ),
     );

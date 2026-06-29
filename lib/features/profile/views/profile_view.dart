@@ -20,13 +20,13 @@ class ProfileView extends StatelessWidget {
             child: IntrinsicHeight(
               child: Column(
                 children: [
-                  // ── Blue header with avatar overlapping white card ──
+                  // ── Blue header with avatar overlapping card ──
                   const ProfileViewHeader(),
 
-                  // ── White scrollable area ───────────────────────────
+                  // ── Adaptive scrollable card area ───────────────────────────
                   Expanded(
                     child: Container(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,

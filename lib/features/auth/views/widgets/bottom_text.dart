@@ -12,6 +12,7 @@ class BottomText extends StatelessWidget {
   final String messageText;
   final String clickableText;
   final VoidCallback onTextClicked;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -20,8 +21,8 @@ class BottomText extends StatelessWidget {
         softWrap: true,
         text: TextSpan(
           text: messageText,
-          style: context.textStyles.bodyMedium!.copyWith(
-            color: AppColors.lightGrey,
+          style: context.textStyles.bodyMedium?.copyWith(
+            color: context.colorScheme.secondary,
           ),
           children: [
             WidgetSpan(
@@ -29,8 +30,9 @@ class BottomText extends StatelessWidget {
                 onTap: () => onTextClicked(),
                 child: Text(
                   clickableText,
-                  style: context.textStyles.labelLarge!.copyWith(
+                  style: context.textStyles.labelMedium?.copyWith(
                     color: AppColors.mainBlue,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
