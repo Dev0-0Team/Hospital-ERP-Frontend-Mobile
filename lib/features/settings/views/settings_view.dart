@@ -1,10 +1,11 @@
 import 'package:doctorine/core/extensions/build_context_extensions.dart';
-import 'package:doctorine/core/helpers/context_extension.dart';
 import 'package:doctorine/core/helpers/spaces.dart';
+import 'package:doctorine/core/router/app_routes.dart';
 import 'package:doctorine/core/theme/logic/theme_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -27,9 +28,10 @@ class SettingsView extends StatelessWidget {
               icon: CupertinoIcons.question,
               title: "FQA",
             ),
-            const SettingsListTile(
+            SettingsListTile(
               icon: Icons.language,
               title: "Language",
+              onPressed: () => context.push(AppRoutes.languages),
             ),
             BlocBuilder<ThemeCubit, ThemeMode>(
               builder: (context, themeMode) {
@@ -71,26 +73,29 @@ class SettingsListTile extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          children: [
-            Icon(
-              icon,
-              color: context.colorScheme.tertiary,
-            ),
-            const HorizontalSpace(width: 14),
-            Text(
-              title,
-              style: context.textStyles.bodyMedium
-                  ?.copyWith(color: context.colorScheme.tertiary),
-            ),
-            const Spacer(),
-            trailing ??
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: context.colorScheme.tertiary,
-                  size: 12,
-                )
-          ],
+        GestureDetector(
+          onTap: onPressed,
+          child: Row(
+            children: [
+              Icon(
+                icon,
+                color: context.colorScheme.tertiary,
+              ),
+              const HorizontalSpace(width: 14),
+              Text(
+                title,
+                style: context.textStyles.bodyMedium
+                    ?.copyWith(color: context.colorScheme.tertiary),
+              ),
+              const Spacer(),
+              trailing ??
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: context.colorScheme.tertiary,
+                    size: 12,
+                  )
+            ],
+          ),
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 16),

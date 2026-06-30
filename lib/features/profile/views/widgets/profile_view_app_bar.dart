@@ -13,18 +13,7 @@ class ProfileViewAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          InkWell(
-            borderRadius: BorderRadius.circular(20),
-            onTap: () => context.pop(),
-            child: Padding(
-              padding: const EdgeInsets.all(4),
-              child: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                color: context.colorScheme.onPrimary,
-                size: 24,
-              ),
-            ),
-          ),
+          Spacer(),
           Text(
             'Profile',
             style: context.textStyles.titleMedium?.copyWith(
@@ -32,6 +21,7 @@ class ProfileViewAppBar extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
+          Spacer(),
           InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: () => context.push(AppRoutes.settings),

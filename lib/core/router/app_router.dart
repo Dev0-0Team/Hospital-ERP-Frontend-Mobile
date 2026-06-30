@@ -7,6 +7,7 @@ import 'package:doctorine/features/home/home_view.dart';
 import 'package:doctorine/features/onboarding/ui/onboarding_view.dart';
 import 'package:doctorine/features/root/logic/root_cubit.dart';
 import 'package:doctorine/features/root/views/root_view.dart';
+import 'package:doctorine/features/settings/views/language_view.dart';
 import 'package:doctorine/features/settings/views/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,6 +60,11 @@ class AppRouter {
         path: AppRoutes.settings,
         name: AppRoutes.settings,
         builder: (context, state) => const SettingsView(),
+      ),
+      GoRoute(
+        path: AppRoutes.languages,
+        name: AppRoutes.languages,
+        builder: (context, state) => const LanguageView(),
       ),
     ],
     errorBuilder: (context, state) =>
