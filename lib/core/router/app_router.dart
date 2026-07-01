@@ -5,6 +5,7 @@ import 'package:doctorine/features/auth/views/sign_up_view.dart';
 import 'package:doctorine/features/auth/views/forgot_password_view.dart';
 import 'package:doctorine/features/home/home_view.dart';
 import 'package:doctorine/features/onboarding/ui/onboarding_view.dart';
+import 'package:doctorine/features/profile/views/personal_information_view.dart';
 import 'package:doctorine/features/root/logic/root_cubit.dart';
 import 'package:doctorine/features/root/views/root_view.dart';
 import 'package:doctorine/features/settings/views/language_view.dart';
@@ -65,6 +66,11 @@ class AppRouter {
         path: AppRoutes.languages,
         name: AppRoutes.languages,
         builder: (context, state) => const LanguageView(),
+      ),
+      GoRoute(
+        path: AppRoutes.personalInformations,
+        name: AppRoutes.personalInformations,
+        builder: (context, state) => const PersonalInformationView(),
       ),
     ],
     errorBuilder: (context, state) =>
