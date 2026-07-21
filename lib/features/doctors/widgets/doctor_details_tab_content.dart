@@ -2,6 +2,7 @@ import 'package:doctorine/features/doctors/logic/doctor_details_tab_cubit/doctor
 import 'package:doctorine/features/doctors/widgets/about_tab_content.dart';
 import 'package:doctorine/features/doctors/widgets/location_tab_content.dart';
 import 'package:doctorine/features/doctors/widgets/reviews_tab_content.dart';
+import 'package:doctorine/features/doctors/widgets/s_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,13 +15,13 @@ class DoctorDetailsTabContent extends StatelessWidget {
       builder: (context, selectedIndex) {
         switch (selectedIndex) {
           case 0:
-            return const AboutTabContent();
+            return const SBox(child: AboutTabContent());
           case 1:
-            return const LocationTabContent();
+            return const SBox(child: LocationTabContent());
           case 2:
             return const ReviewsTabContent();
           default:
-            return const SizedBox.shrink();
+            return const SBox(child: SizedBox.shrink());
         }
       },
     );

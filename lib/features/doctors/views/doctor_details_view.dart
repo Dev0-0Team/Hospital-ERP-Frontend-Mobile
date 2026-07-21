@@ -1,7 +1,7 @@
 import 'package:doctorine/core/Functions/show_bottom_sheet.dart';
 import 'package:doctorine/core/helpers/spaces.dart';
-import 'package:doctorine/core/theme/app_colors.dart';
 import 'package:doctorine/core/widgets/custom_app_bar.dart';
+import 'package:doctorine/core/widgets/custom_floating_action_button.dart';
 import 'package:doctorine/core/widgets/primary_button.dart';
 import 'package:doctorine/core/widgets/rating_bottom_sheet.dart';
 import 'package:doctorine/features/doctors/logic/doctor_details_tab_cubit/doctor_details_tab_cubit.dart';
@@ -35,8 +35,8 @@ class DoctorDetailsView extends StatelessWidget {
             SliverVerticalSpace(height: 24),
             SBox(child: DoctorDetailsTabBar()),
             SliverVerticalSpace(height: 24),
-            SliverFillRemaining(
-                hasScrollBody: true, child: DoctorDetailsTabContent()),
+            DoctorDetailsTabContent(),
+            SliverVerticalSpace(height: 25)
           ],
         ),
       ),
@@ -44,25 +44,17 @@ class DoctorDetailsView extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 20, right: 12, left: 12),
         child: PrimaryButton(
           text: "Make An Appointment",
-          onPressed: () {
-            showAppBottomSheet(
-                context: context, bottomSheet: const RatingBottomSheet());
-          },
+          onPressed: () {},
         ),
       ),
-      floatingActionButton:
-          BlocBuilder<DoctorDetailsTabCubit, int>(builder: (context, state) {
-        return state == 2
-            ? AnimatedContainer(
-                height: 25,
-                width: 25,
-                duration: const Duration(microseconds: 500),
-                decoration: const BoxDecoration(
-                    color: AppColors.mainBlue, shape: BoxShape.circle),
-                child: const Icon(Icons.add),
+      floatingActionButton: BlocBuilder<DoctorDetailsTabCubit, int>(
+        builder: (context, state) => state == 2
+            ? CustomFloatingActionButton(
+                onPressed: () => showAppBottomSheet(
+                    context: context, bottomSheet: const RatingBottomSheet()),
               )
-            : const SizedBox.shrink();
-      }),
+            : const SizedBox.shrink(),
+      ),
     );
   }
 }

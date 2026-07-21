@@ -7,9 +7,7 @@ class ReviewsTabContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: const EdgeInsets.only(bottom: 200),
-      //physics: const (),
+    return SliverList.separated(
       itemCount: 20,
       itemBuilder: (context, index) => const ReviewCard(),
       separatorBuilder: (context, index) => const VerticalSpace(height: 20),
