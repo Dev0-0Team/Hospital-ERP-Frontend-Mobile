@@ -14,7 +14,7 @@ class LocationTabContent extends StatelessWidget {
       children: [
         const VerticalSpace(height: 8),
         Text(
-          'Coming Soon',
+          context.l10n.comingSoon,
           style: context.textStyles.bodyMedium,
         ),
       ],

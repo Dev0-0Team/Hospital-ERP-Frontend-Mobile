@@ -28,6 +28,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "about": MessageLookupByLibrary.simpleMessage("About"),
+    "aboutDoctor": MessageLookupByLibrary.simpleMessage("About Doctor"),
+    "aboutDoctorDescription": MessageLookupByLibrary.simpleMessage(
+      "Dr. Jenny Watson is the top most Immunologists specialist in Christ Hospital at London. She achived several awards for her wonderful contribution in medical field. She is available for private consultation.",
+    ),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
@@ -42,8 +47,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "byLoggingYouAgreeToOur": MessageLookupByLibrary.simpleMessage(
       "By logging, you agree to our ",
     ),
+    "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
     "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+    "doctorDetails": MessageLookupByLibrary.simpleMessage("Doctor Details"),
+    "doctorDetailsHospital": MessageLookupByLibrary.simpleMessage(
+      "RSUD Gatot Subroto",
+    ),
+    "doctorDetailsName": MessageLookupByLibrary.simpleMessage(
+      "Dr. Randy Wigham",
+    ),
     "doctorNamePlaceholder": MessageLookupByLibrary.simpleMessage(
       "Dr. John Doe",
     ),
@@ -52,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doctorSpecialtyPlaceholder": MessageLookupByLibrary.simpleMessage(
       "General | RSUD Gatot Subroto",
     ),
+    "done": MessageLookupByLibrary.simpleMessage("Done"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account yet? ",
     ),
@@ -75,12 +89,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "general": MessageLookupByLibrary.simpleMessage("General"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "giveRate": MessageLookupByLibrary.simpleMessage("Give Rate"),
     "hiUser": m1,
     "howAreYouToday": MessageLookupByLibrary.simpleMessage(
       "How Are you Today?",
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "location": MessageLookupByLibrary.simpleMessage("Location"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "makeAnAppointment": MessageLookupByLibrary.simpleMessage(
+      "Make An Appointment",
+    ),
     "neurologic": MessageLookupByLibrary.simpleMessage("Neurologic"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
@@ -101,23 +120,37 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "reviewerNamePlaceholder": MessageLookupByLibrary.simpleMessage("Jane"),
+    "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+    "sampleReviewText": MessageLookupByLibrary.simpleMessage(
+      "As someone who lives in a remote area with limited access to healthcare, this telemedicine app has been a game changer for me. I can easily schedule virtual appointments with doctors and get the care I need without having to travel long distances.",
+    ),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "searchItemPlaceholder": m2,
     "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
     "selectLanguage": MessageLookupByLibrary.simpleMessage("Select Language"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "shareFeedbackAboutDoctor": MessageLookupByLibrary.simpleMessage(
+      "Share your feedback about the doctor",
+    ),
     "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "sortBy": MessageLookupByLibrary.simpleMessage("Sort By"),
     "speciality": MessageLookupByLibrary.simpleMessage("Speciality"),
+    "str": MessageLookupByLibrary.simpleMessage("STR"),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions ",
     ),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
     "undefinedRoute": MessageLookupByLibrary.simpleMessage("this is undefined"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
     "welcomeBackDescription": MessageLookupByLibrary.simpleMessage(
       "We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.",
+    ),
+    "workingTime": MessageLookupByLibrary.simpleMessage("Working Time"),
+    "workingTimeDetails": MessageLookupByLibrary.simpleMessage(
+      "Monday - Friday, 08.00 AM - 20.00 PM",
     ),
   };
 }

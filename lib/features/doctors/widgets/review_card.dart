@@ -25,12 +25,12 @@ class ReviewCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Jane",
+                      context.l10n.reviewerNamePlaceholder,
                       style: context.textStyles.labelMedium,
                     ),
                     const Spacer(),
                     Text(
-                      "Today",
+                      context.l10n.today,
                       style: context.textStyles.bodyMedium,
                     ),
                   ],
@@ -40,7 +40,7 @@ class ReviewCard extends StatelessWidget {
                   style: context.textStyles.bodySmall,
                 ),
                 Text(
-                  "As someone who lives in a remote area with limited access to healthcare, this telemedicine app has been a game changer for me. I can easily schedule virtual appointments with doctors and get the care I need without having to travel long distances.",
+                  context.l10n.sampleReviewText,
                   style: context.textStyles.bodyMedium,
                 ),
               ],

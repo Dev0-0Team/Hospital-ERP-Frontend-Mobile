@@ -28,7 +28,7 @@ class RatingBottomSheet extends StatelessWidget {
           const DragHandleContainer(),
 
           Center(
-            child: Text("Give Rate", style: context.textStyles.titleSmall),
+            child: Text(context.l10n.giveRate, style: context.textStyles.titleSmall),
           ),
           const VerticalSpace(height: 12),
           Divider(
@@ -39,7 +39,7 @@ class RatingBottomSheet extends StatelessWidget {
           Text("⭐⭐⭐⭐⭐⭐", style: context.textStyles.labelLarge),
           ////////////////
           const VerticalSpace(height: 12),
-          Text("Share your feedback about the doctor",
+          Text(context.l10n.shareFeedbackAboutDoctor,
               style: context.textStyles.labelLarge),
           const VerticalSpace(height: 12),
           const TextField(
@@ -47,7 +47,7 @@ class RatingBottomSheet extends StatelessWidget {
           ),
           const VerticalSpace(height: 28),
           PrimaryButton(
-              text: "done", onPressed: () => Navigator.of(context).pop()),
+              text: context.l10n.done, onPressed: () => Navigator.of(context).pop()),
           const VerticalSpace(height: 18),
         ],
       ),

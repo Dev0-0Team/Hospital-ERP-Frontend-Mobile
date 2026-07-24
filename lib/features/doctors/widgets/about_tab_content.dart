@@ -13,28 +13,27 @@ class AboutTabContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'About Doctor',
+            context.l10n.aboutDoctor,
             style: context.textStyles.labelMedium,
           ),
           const VerticalSpace(height: 8),
           Text(
-            '''
-Dr. Jenny Watson is the top most Immunologists specialist in Christ Hospital at London. She achived several awards for her wonderful contribution in medical field. She is available for private consultation.
-    ''',
+            context.l10n.aboutDoctorDescription,
             style: context.textStyles.bodyMedium,
           ),
+          const VerticalSpace(height: 16),
           Text(
-            'Working Time',
+            context.l10n.workingTime,
             style: context.textStyles.labelMedium,
           ),
           const VerticalSpace(height: 8),
           Text(
-            'Monday - Friday, 08.00 AM - 20.00 PM',
+            context.l10n.workingTimeDetails,
             style: context.textStyles.bodyMedium,
           ),
-          const VerticalSpace(height: 8),
+          const VerticalSpace(height: 16),
           Text(
-            'STR',
+            context.l10n.str,
             style: context.textStyles.labelMedium,
           ),
           const VerticalSpace(height: 8),

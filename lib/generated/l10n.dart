@@ -493,6 +493,156 @@ class S {
   String get pediatric {
     return Intl.message('Pediatric', name: 'pediatric', desc: '', args: []);
   }
+
+  /// `Doctor Details`
+  String get doctorDetails {
+    return Intl.message(
+      'Doctor Details',
+      name: 'doctorDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Make An Appointment`
+  String get makeAnAppointment {
+    return Intl.message(
+      'Make An Appointment',
+      name: 'makeAnAppointment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dr. Randy Wigham`
+  String get doctorDetailsName {
+    return Intl.message(
+      'Dr. Randy Wigham',
+      name: 'doctorDetailsName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `RSUD Gatot Subroto`
+  String get doctorDetailsHospital {
+    return Intl.message(
+      'RSUD Gatot Subroto',
+      name: 'doctorDetailsHospital',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About`
+  String get about {
+    return Intl.message('About', name: 'about', desc: '', args: []);
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message('Location', name: 'location', desc: '', args: []);
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message('Reviews', name: 'reviews', desc: '', args: []);
+  }
+
+  /// `About Doctor`
+  String get aboutDoctor {
+    return Intl.message(
+      'About Doctor',
+      name: 'aboutDoctor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dr. Jenny Watson is the top most Immunologists specialist in Christ Hospital at London. She achived several awards for her wonderful contribution in medical field. She is available for private consultation.`
+  String get aboutDoctorDescription {
+    return Intl.message(
+      'Dr. Jenny Watson is the top most Immunologists specialist in Christ Hospital at London. She achived several awards for her wonderful contribution in medical field. She is available for private consultation.',
+      name: 'aboutDoctorDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Working Time`
+  String get workingTime {
+    return Intl.message(
+      'Working Time',
+      name: 'workingTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monday - Friday, 08.00 AM - 20.00 PM`
+  String get workingTimeDetails {
+    return Intl.message(
+      'Monday - Friday, 08.00 AM - 20.00 PM',
+      name: 'workingTimeDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `STR`
+  String get str {
+    return Intl.message('STR', name: 'str', desc: '', args: []);
+  }
+
+  /// `Coming Soon`
+  String get comingSoon {
+    return Intl.message('Coming Soon', name: 'comingSoon', desc: '', args: []);
+  }
+
+  /// `Jane`
+  String get reviewerNamePlaceholder {
+    return Intl.message(
+      'Jane',
+      name: 'reviewerNamePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `As someone who lives in a remote area with limited access to healthcare, this telemedicine app has been a game changer for me. I can easily schedule virtual appointments with doctors and get the care I need without having to travel long distances.`
+  String get sampleReviewText {
+    return Intl.message(
+      'As someone who lives in a remote area with limited access to healthcare, this telemedicine app has been a game changer for me. I can easily schedule virtual appointments with doctors and get the care I need without having to travel long distances.',
+      name: 'sampleReviewText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Give Rate`
+  String get giveRate {
+    return Intl.message('Give Rate', name: 'giveRate', desc: '', args: []);
+  }
+
+  /// `Share your feedback about the doctor`
+  String get shareFeedbackAboutDoctor {
+    return Intl.message(
+      'Share your feedback about the doctor',
+      name: 'shareFeedbackAboutDoctor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message('Done', name: 'done', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

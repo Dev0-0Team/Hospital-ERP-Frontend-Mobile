@@ -12,9 +12,9 @@ class DoctorDetailsTabBar extends StatelessWidget {
       builder: (context, selectedIndex) {
         return Row(
           children: [
-            _buildTab(context, 0, 'About', selectedIndex == 0),
-            _buildTab(context, 1, 'Location', selectedIndex == 1),
-            _buildTab(context, 2, 'Reviews', selectedIndex == 2),
+            _buildTab(context, 0, context.l10n.about, selectedIndex == 0),
+            _buildTab(context, 1, context.l10n.location, selectedIndex == 1),
+            _buildTab(context, 2, context.l10n.reviews, selectedIndex == 2),
           ],
         );
       },

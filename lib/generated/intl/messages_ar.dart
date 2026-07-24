@@ -28,6 +28,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "about": MessageLookupByLibrary.simpleMessage("نبذة"),
+    "aboutDoctor": MessageLookupByLibrary.simpleMessage("عن الطبيب"),
+    "aboutDoctorDescription": MessageLookupByLibrary.simpleMessage(
+      "الدكتورة جيني واتسون هي أخصائية علم المناعة الأولى في مستشفى كرايست في لندن. حصلت على عدة جوائز لمساهمتها الرائعة في المجال الطبي. وهي متاحة للاستشارات الخاصة.",
+    ),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ ",
@@ -42,14 +47,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "byLoggingYouAgreeToOur": MessageLookupByLibrary.simpleMessage(
       "من خلال تسجيل الدخول، فإنك توافق على ",
     ),
+    "comingSoon": MessageLookupByLibrary.simpleMessage("قريباً"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
+    "doctorDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الطبيب"),
+    "doctorDetailsHospital": MessageLookupByLibrary.simpleMessage(
+      "مستشفى غاتوت سوبروتو",
+    ),
+    "doctorDetailsName": MessageLookupByLibrary.simpleMessage(
+      "د. راندي ويجهام",
+    ),
     "doctorNamePlaceholder": MessageLookupByLibrary.simpleMessage("د. جون دو"),
     "doctorReviewsPlaceholder": m0,
     "doctorSpecialty": MessageLookupByLibrary.simpleMessage("تخصص الطبيب"),
     "doctorSpecialtyPlaceholder": MessageLookupByLibrary.simpleMessage(
       "عام | مستشفى غاتوت سوبروتو",
     ),
+    "done": MessageLookupByLibrary.simpleMessage("تم"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب بعد؟ ",
     ),
@@ -73,10 +87,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "general": MessageLookupByLibrary.simpleMessage("عام"),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "giveRate": MessageLookupByLibrary.simpleMessage("إضافة تقييم"),
     "hiUser": m1,
     "howAreYouToday": MessageLookupByLibrary.simpleMessage("كيف حالك اليوم؟"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "location": MessageLookupByLibrary.simpleMessage("الموقع"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "makeAnAppointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "neurologic": MessageLookupByLibrary.simpleMessage("مخ وأعصاب"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "onboardingDescription": MessageLookupByLibrary.simpleMessage(
@@ -101,25 +118,39 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetPassword": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "reviewerNamePlaceholder": MessageLookupByLibrary.simpleMessage("جين"),
+    "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
+    "sampleReviewText": MessageLookupByLibrary.simpleMessage(
+      "بصفتي شخصاً يعيش في منطقة نائية مع إمكانية وصول محدودة للرعاية الصحية، كان تطبيق الطب عن بُعد هذا بمثابة تغيير جذري بالنسبة لي. يمكنني بسهولة جدولة مواعيد افتراضية مع الأطباء والحصول على الرعاية التي أحتاجها دون الحاجة إلى السفر لمسافات طويلة.",
+    ),
     "search": MessageLookupByLibrary.simpleMessage("البحث"),
     "searchItemPlaceholder": m2,
     "seeAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "selectLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+    "shareFeedbackAboutDoctor": MessageLookupByLibrary.simpleMessage(
+      "شارك رأيك وخبرتك عن الطبيب",
+    ),
     "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "sortBy": MessageLookupByLibrary.simpleMessage("تصنيف حسب"),
     "speciality": MessageLookupByLibrary.simpleMessage("التخصص"),
+    "str": MessageLookupByLibrary.simpleMessage("رقم التسجيل الطبي (STR)"),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام ",
     ),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
     "undefinedRoute": MessageLookupByLibrary.simpleMessage(
       "هذا المسار غير محدد",
     ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
     "welcomeBackDescription": MessageLookupByLibrary.simpleMessage(
       "يسعدنا عودتك إلينا، لا يمكننا الانتظار لرؤية ما قمت به منذ آخر تسجيل دخول لك.",
+    ),
+    "workingTime": MessageLookupByLibrary.simpleMessage("أوقات العمل"),
+    "workingTimeDetails": MessageLookupByLibrary.simpleMessage(
+      "الإثنين - الجمعة، 08:00 صباحاً - 20:00 مساءً",
     ),
   };
 }

@@ -33,10 +33,10 @@ Column _buildDoctorInfo(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text("Dr. Randy Wigham", style: context.textStyles.displayMedium),
+      Text(context.l10n.doctorDetailsName, style: context.textStyles.displayMedium),
       const VerticalSpace(height: 4),
       Text(
-        "RSUD Gatot Subroto",
+        context.l10n.doctorDetailsHospital,
         style: context.textStyles.bodySmall,
       ),
       const VerticalSpace(height: 12),

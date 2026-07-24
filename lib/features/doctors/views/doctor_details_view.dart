@@ -1,4 +1,5 @@
 import 'package:doctorine/core/Functions/show_bottom_sheet.dart';
+import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:doctorine/core/helpers/spaces.dart';
 import 'package:doctorine/core/widgets/custom_app_bar.dart';
 import 'package:doctorine/core/widgets/custom_floating_action_button.dart';
@@ -18,32 +19,32 @@ class DoctorDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: CustomScrollView(
           slivers: [
-            SliverVerticalSpace(height: 25),
+            const SliverVerticalSpace(height: 25),
             SBox(
               child: CustomAppBar(
-                title: 'Doctor Details',
-                trailing: Icon(Icons.more_horiz),
+                title: context.l10n.doctorDetails,
+                trailing: const Icon(Icons.more_horiz),
                 trailingPadding: 0,
               ),
             ),
-            SliverVerticalSpace(height: 24),
-            SBox(child: DoctorDetailsTile()),
-            SliverVerticalSpace(height: 24),
-            SBox(child: DoctorDetailsTabBar()),
-            SliverVerticalSpace(height: 24),
-            DoctorDetailsTabContent(),
-            SliverVerticalSpace(height: 25)
+            const SliverVerticalSpace(height: 24),
+            const SBox(child: DoctorDetailsTile()),
+            const SliverVerticalSpace(height: 24),
+            const SBox(child: DoctorDetailsTabBar()),
+            const SliverVerticalSpace(height: 24),
+            const DoctorDetailsTabContent(),
+            const SliverVerticalSpace(height: 25)
           ],
         ),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 20, right: 12, left: 12),
         child: PrimaryButton(
-          text: "Make An Appointment",
+          text: context.l10n.makeAnAppointment,
           onPressed: () {},
         ),
       ),
