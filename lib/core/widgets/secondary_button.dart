@@ -2,9 +2,10 @@ import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
-  const SecondaryButton({super.key, this.onPressed, required this.text});
+  const SecondaryButton({super.key, this.onPressed, required this.text, this.boarderColor});
   final void Function()? onPressed;
   final String text;
+  final Color? boarderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class SecondaryButton extends StatelessWidget {
           color: context.colorScheme.surface,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(25),
-          border: Border.all(color: context.colorScheme.outline),
+          border: Border.all(color:boarderColor?? context.colorScheme.outline),
         ),
         child: Text(
           text,
