@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 class ProfileViewButtons extends StatelessWidget {
   const ProfileViewButtons({
     super.key,
+    this.onAppointmentsTap,
+    this.onMedicalRecordsTap,
   });
-
+  final VoidCallback? onAppointmentsTap;
+  final VoidCallback? onMedicalRecordsTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,10 +21,13 @@ class ProfileViewButtons extends StatelessWidget {
         spacing: 16,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            "My Appointments",
-            style: context.textStyles.bodySmall?.copyWith(
-              color: context.colorScheme.tertiary,
+          GestureDetector(
+            onTap: onAppointmentsTap,
+            child: Text(
+              "My Appointments",
+              style: context.textStyles.bodySmall?.copyWith(
+                color: context.colorScheme.tertiary,
+              ),
             ),
           ),
           Container(
@@ -29,10 +35,13 @@ class ProfileViewButtons extends StatelessWidget {
             height: 24,
             color: Colors.grey,
           ),
-          Text(
-            "Medical records",
-            style: context.textStyles.bodySmall?.copyWith(
-              color: context.colorScheme.tertiary,
+          GestureDetector(
+            onTap: onMedicalRecordsTap,
+            child: Text(
+              "Medical records",
+              style: context.textStyles.bodySmall?.copyWith(
+                color: context.colorScheme.tertiary,
+              ),
             ),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:doctorine/core/extensions/build_context_extensions.dart';
 import 'package:doctorine/core/router/app_routes.dart';
+import 'package:doctorine/features/appointment/logic/appointments_tab_cubit.dart';
 import 'package:doctorine/features/appointment/views/appointments_view.dart';
 import 'package:doctorine/features/auth/views/fill_profile_view.dart';
 import 'package:doctorine/features/auth/views/forgot_password_view.dart';
@@ -22,7 +23,7 @@ import 'package:go_router/go_router.dart';
 class AppRouter {
   AppRouter._();
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutes.appointment,
+    initialLocation: AppRoutes.root,
     routes: [
       GoRoute(
         path: AppRoutes.root,
@@ -93,7 +94,10 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.appointment,
         name: AppRoutes.appointment,
-        builder: (context, state) => const AppointmentsView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => AppointmentsTabCubit(),
+          child: const AppointmentsView(),
+        ),
       ),
     ],
     errorBuilder: (context, state) =>

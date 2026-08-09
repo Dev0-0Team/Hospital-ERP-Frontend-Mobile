@@ -39,7 +39,12 @@ class ProfileView extends StatelessWidget {
                         children: [
                           const ProfileViewUserInfo(),
                           const VerticalSpace(height: 35),
-                          const ProfileViewButtons(),
+                          ProfileViewButtons(
+                              onAppointmentsTap: () =>
+                                  context.push(AppRoutes.appointment),
+                              onMedicalRecordsTap: () => {}
+                              //context.push(AppRoutes.medicalRecords),
+                              ),
                           const VerticalSpace(height: 50),
                           ProfileViewTile(
                             title: "Personal Information",
